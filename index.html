@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet"> 
+    <title>eye.pl - biblioteka polskich filmów</title>
+    <style>
+        *{ 
+            margin: auto;
+            padding: 0;
+            font-family: "Poppins", Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+            
+        }
+
+        *::selection {
+            color:white;
+            background-color: crimson;
+        }
+
+        body {
+            background-color: rgb(29, 29, 29);
+            box-shadow: inset 0px 0px 150px rgba(0, 0, 0, 0.5);
+ 
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav {
+            width: 100%;
+            background-color: rgb(27, 27, 27);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0px 0px 50px rgb(255, 255, 255, 0.s);
+            height: 90px;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-bar {
+            box-shadow: inset 5px 0px 40px rgba(0, 0, 0, 0.61);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            
+        }
+
+        nav a img{
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-block-end: auto;
+            user-select: none;
+        }
+
+
+
+        .search-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .search-bar input {
+            min-width: 400px;
+            width: 250px;
+            height: 25px;
+            transition: 0.5s;
+        }
+
+        .search-bar input:focus {
+            min-width: 600px;
+            transition: 0.5s;
+        }
+
+        .search-button {
+            width: 35px;
+            height: 27px;
+            margin-right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border: none;
+            background-color: rgb(209, 209, 209);
+        }
+
+        .search-button:active {
+            background-color: rgb(167, 167, 167);
+        }
+
+        .search-icon {
+            height: 15px;
+        }
+
+        .nav-bar ul {
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-bar ul li {
+            width: 500px;
+            margin-left: 50px;
+            user-select: none;
+        }
+
+        .nav-bar ul li a {
+            color: rgb(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .nav-bar ul li a:hover {
+            color: rgb(255, 255, 255);
+            transition: 0.2s;
+        }
+
+        main {
+            width: 100%;
+            
+        }
+
+        .videos {
+            width: 80%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content:space-around;
+            align-items: center;
+            margin-top: 150px;
+
+
+        }
+
+        .videos a {
+            text-align:left;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 25px;
+            margin-right: 2px;
+        }
+
+        .videos a img {
+            border-radius: 5%;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            transition: 0.2s;
+            user-select: none;
+            
+        }
+        .videos a img:hover {
+            transform: scale(105%);
+            transition: 0.2s;
+        }
+
+        .video-description {
+            margin-top: 5px;
+        }
+
+        .video-title:hover{
+            color:white;
+            transition: 0.2s;
+        }
+
+        .video-author {
+            font-size: small;
+        }
+
+        .video-info {
+            font-size: small;
+        }
+
+        .kkkk {
+            font-size: 10px;
+            color: goldenrod;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <h1>
+                <a href="index.html"><img src="/eyelogo.png" alt=""></a>
+            </h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button class="search-button"><img src="/iconmonstr-magnifier-lined-24.png" alt="search-icon" class="search-icon"></button>
+                </div>
+            <ul class="menu1">
+                <li><a href="#"> Kategorie</a></li>
+                <li><a href="#"> Losowo</a></li>
+            <ul class="menu2"></ul>
+                <li><a href="#"> Zarejestruj</a></li>
+                <li><a href="#"> Zaloguj</a></li>
+        </div>
+    </nav>
+    <main>
+        
+        <div class="videos">
+
+        <a href="/chlopaki-nie-placza.html">
+                <img class="miniature" src="https://fwcdn.pl/fpo/08/43/843/7730333.6.jpg" alt="poster">
+                <div class="video-description">
+                    <p class="video-title">Chłopaki Nie Płaczą</p>
+                    <p class="video-author">Mikołaj Korzyński</p>
+                    <p class="video-info">⭐7,8 komedia, sensacyjny</p>
+                </div>
+        </a>
+
+        <a href="/dzienswira.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/14/13/31413/6900422.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Dzień Świra</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,8 - komedia, dramat</p>
+            </div>
+        </a>
+        
+        <a href="/nicsmiesznego.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/06/81/681/7011045.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Nic Śmiesznego</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,4 komedia, dramat</p>
+            </div>
+        </a>
+
+        <a href="/kiler.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/05/29/529/6900785.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler<sup class="kkkk"> (4K)</sup></p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,7 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/kilerow2.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/00/80/80/8023222.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler-ów 2-óch</p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,3 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/chlopaki-nie-placza.html">
+                <img class="miniature" src="https://fwcdn.pl/fpo/08/43/843/7730333.6.jpg" alt="poster">
+                <div class="video-description">
+                    <p class="video-title">Chłopaki Nie Płaczą</p>
+                    <p class="video-author">Mikołaj Korzyński</p>
+                    <p class="video-info">⭐7,8 komedia, sensacyjny</p>
+                </div>
+        </a>
+
+        <a href="/dzienswira.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/14/13/31413/6900422.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Dzień Świra</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,8 - komedia, dramat</p>
+            </div>
+        </a>
+        
+        <a href="/nicsmiesznego.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/06/81/681/7011045.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Nic Śmiesznego</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,4 komedia, dramat</p>
+            </div>
+        </a>
+
+        <a href="/kiler.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/05/29/529/6900785.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler<sup class="kkkk"> (4K)</sup></p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,7 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/kilerow2.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/00/80/80/8023222.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler-ów 2-óch</p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,3 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/chlopaki-nie-placza.html">
+                <img class="miniature" src="https://fwcdn.pl/fpo/08/43/843/7730333.6.jpg" alt="poster">
+                <div class="video-description">
+                    <p class="video-title">Chłopaki Nie Płaczą</p>
+                    <p class="video-author">Mikołaj Korzyński</p>
+                    <p class="video-info">⭐7,8 komedia, sensacyjny</p>
+                </div>
+        </a>
+
+        <a href="/dzienswira.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/14/13/31413/6900422.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Dzień Świra</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,8 - komedia, dramat</p>
+            </div>
+        </a>
+        
+        <a href="/nicsmiesznego.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/06/81/681/7011045.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Nic Śmiesznego</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,4 komedia, dramat</p>
+            </div>
+        </a>
+
+        <a href="/kiler.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/05/29/529/6900785.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler<sup class="kkkk"> (4K)</sup></p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,7 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/kilerow2.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/00/80/80/8023222.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler-ów 2-óch</p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,3 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/chlopaki-nie-placza.html">
+                <img class="miniature" src="https://fwcdn.pl/fpo/08/43/843/7730333.6.jpg" alt="poster">
+                <div class="video-description">
+                    <p class="video-title">Chłopaki Nie Płaczą</p>
+                    <p class="video-author">Mikołaj Korzyński</p>
+                    <p class="video-info">⭐7,8 komedia, sensacyjny</p>
+                </div>
+        </a>
+
+        <a href="/dzienswira.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/14/13/31413/6900422.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Dzień Świra</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,8 - komedia, dramat</p>
+            </div>
+        </a>
+        
+        <a href="/nicsmiesznego.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/06/81/681/7011045.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Nic Śmiesznego</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,4 komedia, dramat</p>
+            </div>
+        </a>
+
+        <a href="/kiler.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/05/29/529/6900785.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler<sup class="kkkk"> (4K)</sup></p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,7 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/kilerow2.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/00/80/80/8023222.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler-ów 2-óch</p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,3 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/chlopaki-nie-placza.html">
+                <img class="miniature" src="https://fwcdn.pl/fpo/08/43/843/7730333.6.jpg" alt="poster">
+                <div class="video-description">
+                    <p class="video-title">Chłopaki Nie Płaczą</p>
+                    <p class="video-author">Mikołaj Korzyński</p>
+                    <p class="video-info">⭐7,8 komedia, sensacyjny</p>
+                </div>
+        </a>
+
+        <a href="/dzienswira.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/14/13/31413/6900422.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Dzień Świra</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,8 - komedia, dramat</p>
+            </div>
+        </a>
+        
+        <a href="/nicsmiesznego.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/06/81/681/7011045.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Nic Śmiesznego</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,4 komedia, dramat</p>
+            </div>
+        </a>
+
+        <a href="/kiler.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/05/29/529/6900785.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler<sup class="kkkk"> (4K)</sup></p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,7 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/kilerow2.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/00/80/80/8023222.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler-ów 2-óch</p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,3 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/chlopaki-nie-placza.html">
+                <img class="miniature" src="https://fwcdn.pl/fpo/08/43/843/7730333.6.jpg" alt="poster">
+                <div class="video-description">
+                    <p class="video-title">Chłopaki Nie Płaczą</p>
+                    <p class="video-author">Mikołaj Korzyński</p>
+                    <p class="video-info">⭐7,8 komedia, sensacyjny</p>
+                </div>
+        </a>
+
+        <a href="/dzienswira.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/14/13/31413/6900422.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Dzień Świra</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,8 - komedia, dramat</p>
+            </div>
+        </a>
+        
+        <a href="/nicsmiesznego.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/06/81/681/7011045.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Nic Śmiesznego</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,4 komedia, dramat</p>
+            </div>
+        </a>
+
+        <a href="/kiler.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/05/29/529/6900785.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler<sup class="kkkk"> (4K)</sup></p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,7 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/kilerow2.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/00/80/80/8023222.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler-ów 2-óch</p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,3 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/chlopaki-nie-placza.html">
+                <img class="miniature" src="https://fwcdn.pl/fpo/08/43/843/7730333.6.jpg" alt="poster">
+                <div class="video-description">
+                    <p class="video-title">Chłopaki Nie Płaczą</p>
+                    <p class="video-author">Mikołaj Korzyński</p>
+                    <p class="video-info">⭐7,8 komedia, sensacyjny</p>
+                </div>
+        </a>
+
+        <a href="/dzienswira.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/14/13/31413/6900422.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Dzień Świra</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,8 - komedia, dramat</p>
+            </div>
+        </a>
+        
+        <a href="/nicsmiesznego.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/06/81/681/7011045.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Nic Śmiesznego</p>
+                <p class="video-author">Marek Koterski</p>
+                <p class="video-info">⭐7,4 komedia, dramat</p>
+            </div>
+        </a>
+
+        <a href="/kiler.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/05/29/529/6900785.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler<sup class="kkkk"> (4K)</sup></p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,7 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+        <a href="/kilerow2.html">
+            <img class="miniature" src="https://fwcdn.pl/fpo/00/80/80/8023222.6.jpg" alt="poster">
+            <div class="video-description">
+                <p class="video-title">Kiler-ów 2-óch</p>
+                <p class="video-author">Juliusz Machulski</p>
+                <p class="video-info">⭐7,3 komedia, sensacyjny</p>
+            </div>
+        </a>
+
+
+    
+        </div>
+    </main>
+
+</body>
+</html>

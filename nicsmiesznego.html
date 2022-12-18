@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet"> 
+    <title>vPlay.com - your media center</title>
+    <style>
+        *{ 
+            margin: auto;
+            padding: 0;
+            font-family: "Poppins", Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+            
+        }
+
+        body {
+            background-color: rgb(29, 29, 29);
+            box-shadow: inset 0px 0px 150px rgba(0, 0, 0, 0.5);
+ 
+        }
+        main{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav {
+            width: 100%;
+            background-color: rgb(27, 27, 27);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0px 0px 50px rgb(255, 255, 255, 0.s);
+            height: 90px;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-bar {
+            box-shadow: inset 5px 0px 40px rgba(0, 0, 0, 0.61);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            
+        }
+
+        nav a img{
+            height: 50px;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-block-end: auto;
+        }
+
+
+
+        .search-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .search-bar input {
+            min-width: 400px;
+            width: 250px;
+            height: 25px;
+            transition: 0.5s;
+        }
+
+        .search-bar input:focus {
+            min-width: 600px;
+            transition: 0.5s;
+        }
+
+        .search-button {
+            width: 35px;
+            height: 27px;
+            margin-right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 20%;
+            border-bottom-right-radius: 20%;
+            border: none;
+            background-color: rgb(209, 209, 209);
+            
+        }
+        .search-button:active{
+            background-color: rgb(167, 167, 167);
+        }
+
+        .search-icon {
+            height: 15px;
+        }
+
+        .nav-bar ul {
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-bar ul li {
+            width: 500px;
+            margin-left: 50px;
+        }
+
+        .nav-bar ul li a {
+            color: rgb(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .nav-bar ul li a:hover {
+            color: rgb(255, 255, 255);
+            transition: 0.2s;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content:space-around;
+            align-items: center;
+            margin-top: 150px;
+        }
+
+        .videos a {
+            text-align:left;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 25px;
+            margin-right: 2px;
+        }
+
+        .youtube-video {
+            box-shadow:0px 0px 150px rgba(5, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: rgb(167, 167, 167);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size:25px;
+        }
+
+        .video-title span:hover {
+            color: white;
+        }
+
+        .movie-review {
+            width: 50%;
+            text-align: center;
+            color: rgb(167, 167, 167);
+            margin-top: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <h1>
+                <a href="index.html"><img src="/eyelogo.png" alt=""></a>
+            </h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button class="search-button"><img src="/iconmonstr-magnifier-lined-24.png" alt="search-icon" class="search-icon"></button>
+                </div>
+            <ul class="menu1">
+                <li><a href="#"> Categories</a></li>
+                <li><a href="#"> Upload</a></li>
+            <ul class="menu2"></ul>
+                <li><a href="#"> Register</a></li>
+                <li><a href="#"> Log In</a></li>
+        </div>
+    </nav>
+    <main>
+        <div class="video-container">
+
+            <div class="video-box">
+                <h2 class="video-title"><span>Nic Śmiesznego</span></h2>
+                <iframe width="800" height="400" src="https://www.youtube.com/embed/NXCQNVRRNk4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>    
+
+            <div class="movie-review">
+                <h2>Recenzja:</h2>
+                <q>
+                    Po raz pierwszy poznajemy głównego bohatera filmu "Nic śmiesznego", co ciekawe, w kostnicy. Adam Miauczyński (w tej roli Cezary Pazura), to dobrze nam znana postać sfrustrowanego i przegranego polski inteligenta z innych filmów Marka Koterskiego. Denat w myślach wspomina swoje życie, jest to  równie efektowny co nierealistyczny zabieg filmowy. Reżyser Marek Koterski używa retrospekcji, aby przedstawić widzowi  udrękę życia bohatera, która z punktu widzenia odbiorcy w pierwszym kontakcie jest zdecydowanie bardziej komiczna a dopiero później nieco tragiczna. 
+
+                    Film z solidną dawką dobrego humoru zwraca uwagę na ważny problem zakrzywionego w oczach innych ludzi obrazu jednostki. Zdaniem pracowników kostnicy przyglądających się leżącemu przed nimi ciału, człowiek ten musiał wieść jako reżyser wspaniałe i wystawne życie. Możemy postawić tezę, że Marek Koterski chciał rozprawić się ze stereotypami krążącymi wokół jego profesji, udowadniając w humorystyczny sposób, że jej realia nie pokrywają się z naszymi wyobrażeniami. Jak się okazuje wyobrażenie obserwatorów o bohaterze filmowcu w filmie również zdecydowanie odbiega od rzeczywistości. 
+
+                    Podążając za myślą Miauczyńskiego, obserwujemy przebieg jego kariery drugiego reżysera, a raczej drogę do kolejnych katastrof jakimi kończą się współtworzone przez niego produkcje. Nie dość, że przez całe życie był we wszystkim drugi (drugi syn rodziców oczekujących dziewczynki, drugi w szkole, drugi po swoim przyjacielu Maćku (Maciej Kozłowski) w kolejce do poznania pięknych kobiet, w końcu zawód- drugi reżyser) , to jak na ironię  po śmierci jego ciało jest oznaczone w kostnicy numerem 2. Zgodnie z zależnością raz drugi, zawsze drugi. W końcu próbuje przełamać złą passę i wziąć odpowiedzialność za swoją przyszłość. Postanawia stworzyć swój własny film, jednak próba kończy się fiaskiem.. Znajomy nie zgadza się na natychmiastowe rozpoczęcie zdjęć. Krótka wymiana zdań między nimi, tocząca się w delikatnie mówiąc niesprzyjających okolicznościach przyrody, stała się kultowa i zdecydowanie trzeba ją zobaczyć.  
+
+                    Równolegle do niepowodzeń na płaszczyźnie zawodowej pojawiają się kłopoty w sferze miłosnej. Bohater zadręcza się swoją nieudolnością w kwestii stworzenia trwałej relacji z kobietą. Jego małżeństwo nie przetrwało, mimo to nadal mieszka z żoną i dziećmi. Kiedy któregoś dnia po kolejnym dniu pełnym niepowodzeń wraca pijany do domu, żona wraz z córką postanawiają go nastraszyć. Związują go i przykrywają głowę serwetą. Adaś jest przekonany, że ginie od ciosu zadanego tasakiem. W rzeczywistości kalosz udający broń czyni scenę wręcz groteskową. Bezpośrednio nikt nie przyczynił się do śmierci bohatera, jednak z powodu silnych emocji umiera ona niespodziewanie dla samego siebie na zawał serca.
+
+                    Mimo że bohater stwierdza, iż "nie spotkało mnie w życiu nic śmiesznego" podczas seansu z pewnością można się spodziewać niekontrolowanych wybuchów śmiechu. Jak wiadomo, wszystko zależy od tego, z jakiej perspektywy doświadczamy danej sytuacji. Jeśli jesteśmy jedynie obserwatorami, to nawet najtragiczniejszy w skutkach splot nieprawdopodobnych zbiegów okoliczności będzie nas bawił. Właśnie dlatego film tak przyjemnie się ogląda, że pokazuje człowieka – pechowca totalnego, być może większego niż my.
+                </q>     
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
